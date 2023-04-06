@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="496.0" prefWidth="721.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.harkkatyo.PaaikkunaController">
+    <children>
+        <MenuBar prefHeight="23.0" prefWidth="721.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Tiedosto">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Apua">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <SplitPane dividerPositions="0.29797979797979796" prefHeight="500.0" prefWidth="721.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <VBox prefHeight="417.0" prefWidth="211.0">
+                            <children>
+                                <Label text="Kiekot">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="20.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label text="Hae mallia tai valmistajaa">
+                                    <VBox.margin>
+                                        <Insets left="20.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <TextField fx:id="hakukentta" onKeyReleased="#hakeminen">
+                                    <VBox.margin>
+                                        <Insets left="20.0" right="50.0" top="5.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <Button fx:id="suodata" mnemonicParsing="false" onAction="#handleSuodataClick" text="Suodata Tuloksia">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0" left="20.0" top="13.0" />
+                                    </VBox.margin>
+                                </Button>
+                                <ListView fx:id="hakutulokset" fixedCellSize="50.0" prefHeight="234.0" prefWidth="191.0">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0" left="10.0" right="10.0" />
+                                    </VBox.margin>
+                                </ListView>
+
+                                <HBox prefHeight="34.0" prefWidth="211.0">
+                                    <children>
+                                        <Button fx:id="lisaaNappi" mnemonicParsing="false" onAction="#handleLisaaClick" text="Lisää">
+                                            <HBox.margin>
+                                                <Insets left="20.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                        <Button fx:id="nayta" mnemonicParsing="false" onAction="#handleNaytaClick" text="Näytä">
+                                            <HBox.margin>
+                                                <Insets left="15.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                        <Button fx:id="poista" mnemonicParsing="false" onAction="#handlePoistaClick" text="Poista">
+                                            <HBox.margin>
+                                                <Insets left="15.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="441.0" prefWidth="502.0">
+                    <children>
+                        <HBox prefHeight="469.0" prefWidth="502.0">
+                            <children>
+                                <VBox prefHeight="469.0" prefWidth="278.0">
+                                    <children>
+                                        <Label fx:id="tietoOtsikko" text="Valmistaja, Kiekon nimi">
+                                            <VBox.margin>
+                                                <Insets bottom="15.0" left="70.0" top="12.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <VBox prefHeight="420.0" prefWidth="271.0">
+                                            <children>
+                                                <HBox prefHeight="32.0" prefWidth="244.0">
+                                                    <children>
+                                                        <Label text="Väri">
+                                                            <HBox.margin>
+                                                                <Insets left="68.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="tietoVari">
+                                                            <HBox.margin>
+                                                                <Insets />
+                                                            </HBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="32.0" prefWidth="244.0">
+                                                    <children>
+                                                        <Label text="Valmistusvuosi">
+                                                            <HBox.margin>
+                                                                <Insets left="10.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="tietoVuosi" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="32.0" prefWidth="244.0">
+                                                    <children>
+                                                        <Label text="Paino">
+                                                            <HBox.margin>
+                                                                <Insets left="59.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="tietoPaino" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="32.0" prefWidth="244.0">
+                                                    <children>
+                                                        <Label text="Nopeus">
+                                                            <HBox.margin>
+                                                                <Insets left="48.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="tietoNopeus" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="32.0" prefWidth="244.0">
+                                                    <children>
+                                                        <Label text="Liito">
+                                                            <HBox.margin>
+                                                                <Insets left="67.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="tietoLiito" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="32.0" prefWidth="244.0">
+                                                    <children>
+                                                        <Label text="Vakaus">
+                                                            <HBox.margin>
+                                                                <Insets left="52.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="tietoVakaus" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="32.0" prefWidth="244.0">
+                                                    <children>
+                                                        <Label text="Feidi">
+                                                            <HBox.margin>
+                                                                <Insets left="64.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="tietoFeidi" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="32.0" prefWidth="244.0">
+                                                    <children>
+                                                        <Label text="Muovi">
+                                                            <HBox.margin>
+                                                                <Insets left="57.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="tietoMuovi" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="28.0" prefWidth="244.0">
+                                                    <children>
+                                                        <Label text="Kunto">
+                                                            <HBox.margin>
+                                                                <Insets left="59.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="tietoKunto" prefHeight="3.0" prefWidth="149.0" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="28.0" prefWidth="244.0">
+                                                    <children>
+                                                        <Label prefHeight="17.0" prefWidth="80.0" text="Jälkiä tussista?">
+                                                            <HBox.margin>
+                                                                <Insets left="10.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="tietoTussit" prefHeight="0.0" prefWidth="149.0">
+                                                            <HBox.margin>
+                                                                <Insets />
+                                                            </HBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                    <VBox.margin>
+                                                        <Insets top="5.0" />
+                                                    </VBox.margin>
+                                                </HBox>
+                                                <HBox prefHeight="31.0" prefWidth="244.0">
+                                                    <children>
+                                                        <Label text="Erikoiserä?">
+                                                            <HBox.margin>
+                                                                <Insets left="33.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="tietoErikoisera" prefHeight="0.0" prefWidth="149.0" />
+                                                    </children>
+                                                    <VBox.margin>
+                                                        <Insets top="5.0" />
+                                                    </VBox.margin>
+                                                </HBox>
+                                                <Button fx:id="muokkaa" mnemonicParsing="false" onAction="#handleMuokkaaClick" text="Muokkaa">
+                                                    <VBox.margin>
+                                                        <Insets left="100.0" top="10.0" />
+                                                    </VBox.margin>
+                                                </Button>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="469.0" prefWidth="217.0">
+                                    <children>
+                                        <Label text="Viimeisimmät heitot kiekolla">
+                                            <VBox.margin>
+                                                <Insets top="15.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</VBox>

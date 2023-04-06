@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="273.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.harkkatyo.SuodataController">
+   <children>
+      <Label text="Suodata">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="100.0" top="8.0" />
+         </VBox.margin>
+      </Label>
+      <HBox prefHeight="37.0" prefWidth="273.0">
+         <children>
+            <Label text="Paino">
+               <HBox.margin>
+                  <Insets left="63.0" right="5.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="41.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="-">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="43.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="37.0" prefWidth="273.0">
+         <children>
+            <Label text="Valmistusvuosi">
+               <HBox.margin>
+                  <Insets left="15.0" right="5.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="41.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="-">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="43.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="37.0" prefWidth="273.0">
+         <children>
+            <Label text="Nopeus">
+               <HBox.margin>
+                  <Insets left="52.0" right="5.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="41.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="-">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="43.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="37.0" prefWidth="273.0">
+         <children>
+            <Label text="Liito">
+               <HBox.margin>
+                  <Insets left="70.0" right="5.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="41.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="-">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="43.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="37.0" prefWidth="273.0">
+         <children>
+            <Label text="Vakaus">
+               <HBox.margin>
+                  <Insets left="55.0" right="5.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="41.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="-">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="43.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="37.0" prefWidth="273.0">
+         <children>
+            <Label text="Feidi">
+               <HBox.margin>
+                  <Insets left="66.0" right="5.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="41.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="-">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="43.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="37.0" prefWidth="273.0">
+         <children>
+            <Label text="Kunto">
+               <HBox.margin>
+                  <Insets left="60.0" right="5.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="41.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="-">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="43.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="28.0" prefWidth="273.0">
+         <children>
+            <Label text="Muovi">
+               <HBox.margin>
+                  <Insets left="60.0" right="5.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+            <ComboBox prefHeight="25.0" prefWidth="91.0" />
+
+         </children>
+      </HBox>
+      <HBox prefHeight="33.0" prefWidth="273.0">
+         <children>
+            <Label text="Väri">
+               <HBox.margin>
+                  <Insets left="69.0" right="9.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+            <ComboBox prefHeight="25.0" prefWidth="91.0" />
+
+         </children>
+      </HBox>
+      <HBox prefHeight="37.0" prefWidth="273.0">
+         <children>
+            <Label text="Jälkiä tussista">
+               <HBox.margin>
+                  <Insets left="15.0" right="5.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+            <RadioButton mnemonicParsing="false" text="On">
+               <HBox.margin>
+                  <Insets right="10.0" top="5.0" />
+               </HBox.margin>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Ei ole">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </RadioButton>
+         </children>
+      </HBox>
+      <HBox prefHeight="37.0" prefWidth="273.0">
+         <children>
+            <Label text="Erikoiserä">
+               <HBox.margin>
+                  <Insets left="30.0" right="8.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+            <RadioButton mnemonicParsing="false" text="On">
+               <HBox.margin>
+                  <Insets right="10.0" top="5.0" />
+               </HBox.margin>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Ei ole">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </RadioButton>
+         </children>
+      </HBox>
+      <HBox prefHeight="30.0" prefWidth="273.0">
+         <children>
+            <Button fx:id="suodataTuloksia" mnemonicParsing="false" onAction="#suodataTulokset" text="Suodata">
+               <HBox.margin>
+                  <Insets left="60.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="peruutaSuodataTuloksia" mnemonicParsing="false" onAction="#peruutaSuodataTulokset" text="Peruuta">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
