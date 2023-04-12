@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 public class MuokkaaController {
 
     @FXML
-    private TextField muokkaaKunto, muokkaaPaino, muokkaaValmistusvuosi;
+    private TextField Kunto, Paino, Valmistusvuosi;
     @FXML
     private ChoiceBox<String> muokkaaMuovi, muokkaaVari;
     @FXML
@@ -33,9 +33,9 @@ public class MuokkaaController {
     public void alusta(Kiekko kiekko, Kiekkorekisteri kiekkorekisteri) {
         this.kiekko = kiekko;
 
-        muokkaaKunto.setText(kiekko.getKunto());
-        muokkaaPaino.setText(kiekko.getPaino());
-        muokkaaValmistusvuosi.setText(kiekko.getValmistusvuosi());
+        Kunto.setText(String.valueOf(kiekko.getKunto()));
+        Paino.setText(String.valueOf(kiekko.getPaino()));
+        Valmistusvuosi.setText(String.valueOf(kiekko.getValmistusvuosi()));
 
         muokkaaMuovi.getItems().addAll(kiekkorekisteri.getMuovit());
         muokkaaVari.getItems().addAll("Punainen", "keltainen", "Sininen", "Valkoinen");
@@ -54,11 +54,49 @@ public class MuokkaaController {
         } else { erikoisEi.setSelected(true); }
     }
 
+
+    public void varoitusIkkuna(String teksti) {
+        // Sanotaan käyttäjälle, ettei tätä arvoa voi antaa kiekolle
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setContentText(teksti);
+        alert.showAndWait();
+    }
+
+
+    public boolean tarkastaTekstikentta(int min, int max, TextField text) {
+        //TODO mitä jos tekstikenttä on tyhjä?
+        if (text.getText().isEmpty()) return true;
+
+        int arvo;
+        try {
+            arvo = Integer.parseInt(text.getText());
+        } catch (NumberFormatException e) {
+            text.setStyle("-fx-text-inner-color: red;");
+            varoitusIkkuna("Antamasi arvo kentälle " + text.getId() + " ei ole kokonaisluku");
+            return false;
+        }
+
+        if (arvo >= min && arvo <= max) {
+            text.setStyle("-fx-text-inner-color: black;");
+            return true;
+        }
+
+        text.setStyle("-fx-text-inner-color: red;");
+        varoitusIkkuna("Antamasi arvo kentälle " + text.getId() + " ei ole välillä " + min + " ja " + max);
+        return false;
+    }
+
     @FXML
     public void handleMuokkaaTallennaClick(ActionEvent event) {
-        tallennetaan = true;
-        Stage stage = (Stage) muokkaaTallennaNappi.getScene().getWindow();
-        stage.close();
+        boolean painoOK = tarkastaTekstikentta(130, 200, Paino);
+        boolean kuntoOK = tarkastaTekstikentta(0, 10, Kunto);
+        boolean valmistusvuosiOK = tarkastaTekstikentta(1980, 2023, Valmistusvuosi);
+
+        if (painoOK && kuntoOK && valmistusvuosiOK) {
+            tallennetaan = true;
+            Stage stage = (Stage) muokkaaTallennaNappi.getScene().getWindow();
+            stage.close();
+        }
     }
 
     @FXML
@@ -74,8 +112,7 @@ public class MuokkaaController {
         String tussiValinta = jalkiaOn.isSelected() ? "Kyllä" : "Ei";
         String erikoiseraValinta = erikoisOn.isSelected() ? "Kyllä" : "Ei";
 
-        return new String[] {muokkaaPaino.getText(), muokkaaValmistusvuosi.getText(), muokkaaKunto.getText(),
+        return new String[] {Paino.getText(), Valmistusvuosi.getText(), Kunto.getText(),
                 tussiValinta, erikoiseraValinta, muokkaaMuovi.getValue(), muokkaaVari.getValue() };
     }
-
 }
