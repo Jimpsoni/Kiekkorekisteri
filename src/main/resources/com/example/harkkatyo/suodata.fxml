@@ -27,7 +27,7 @@
                   <Insets left="63.0" right="5.0" top="7.0" />
                </HBox.margin>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="41.0">
+            <TextField fx:id="minPaino" prefHeight="25.0" prefWidth="41.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -37,7 +37,7 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="43.0">
+            <TextField fx:id="maxPaino" prefHeight="25.0" prefWidth="43.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -51,7 +51,7 @@
                   <Insets left="15.0" right="5.0" top="7.0" />
                </HBox.margin>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="41.0">
+            <TextField fx:id="minVuosi" prefHeight="25.0" prefWidth="41.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -61,7 +61,7 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="43.0">
+            <TextField fx:id="maxVuosi" prefHeight="25.0" prefWidth="43.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -75,7 +75,7 @@
                   <Insets left="52.0" right="5.0" top="7.0" />
                </HBox.margin>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="41.0">
+            <TextField fx:id="minNopeus" prefHeight="25.0" prefWidth="41.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -85,7 +85,7 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="43.0">
+            <TextField fx:id="maxNopeus" prefHeight="25.0" prefWidth="43.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -99,7 +99,7 @@
                   <Insets left="70.0" right="5.0" top="7.0" />
                </HBox.margin>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="41.0">
+            <TextField fx:id="minLiito" prefHeight="25.0" prefWidth="41.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -109,7 +109,7 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="43.0">
+            <TextField fx:id="maxLiito" prefHeight="25.0" prefWidth="43.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -123,7 +123,7 @@
                   <Insets left="55.0" right="5.0" top="7.0" />
                </HBox.margin>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="41.0">
+            <TextField fx:id="minVakaus" prefHeight="25.0" prefWidth="41.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -133,7 +133,7 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="43.0">
+            <TextField fx:id="maxVakaus" prefHeight="25.0" prefWidth="43.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -147,7 +147,7 @@
                   <Insets left="66.0" right="5.0" top="7.0" />
                </HBox.margin>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="41.0">
+            <TextField fx:id="minFeidi" prefHeight="25.0" prefWidth="41.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -157,7 +157,7 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="43.0">
+            <TextField fx:id="maxFeidi" prefHeight="25.0" prefWidth="43.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -171,7 +171,7 @@
                   <Insets left="60.0" right="5.0" top="7.0" />
                </HBox.margin>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="41.0">
+            <TextField fx:id="minKunto" prefHeight="25.0" prefWidth="41.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -181,7 +181,7 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="43.0">
+            <TextField fx:id="maxKunto" prefHeight="25.0" prefWidth="43.0">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -195,7 +195,7 @@
                   <Insets left="60.0" right="5.0" top="7.0" />
                </HBox.margin>
             </Label>
-            <ComboBox prefHeight="25.0" prefWidth="91.0" />
+            <ComboBox fx:id="suodataMuovi" prefHeight="25.0" prefWidth="91.0" />
 
          </children>
       </HBox>
@@ -206,7 +206,7 @@
                   <Insets left="69.0" right="9.0" top="7.0" />
                </HBox.margin>
             </Label>
-            <ComboBox prefHeight="25.0" prefWidth="91.0" />
+            <ComboBox fx:id="suodataVari" prefHeight="25.0" prefWidth="91.0" />
 
          </children>
       </HBox>
