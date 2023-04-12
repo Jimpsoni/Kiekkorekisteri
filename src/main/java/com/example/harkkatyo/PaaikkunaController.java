@@ -96,6 +96,12 @@ public class PaaikkunaController {
     }
 
 
+//===========================================================================================================
+                                    // SUODATTAMINEN
+    /**
+     * @param event Ei käytössä
+     * @throws IOException
+     */
     @FXML
     public void handleSuodataClick(ActionEvent event) throws IOException {
         Stage ikkuna = new Stage();
@@ -116,7 +122,9 @@ public class PaaikkunaController {
         ikkuna.setScene(scene);
         ikkuna.showAndWait();
 
-        //TODO hae suodattimet
+        kiekkorekisteri.asetaNumeerisetSuodattimet(suodatacontroller.getNumericValues());
+        kiekkorekisteri.asetaValikkoSuodattimet(suodatacontroller.getStringValues());
+
     }
 
     //===========================================================================================================
@@ -125,9 +133,9 @@ public class PaaikkunaController {
 
     /**
      * Nostaa hälytyksen ja jos vielä painetaan että ollaan varmoja poistosta niin
+     *
      * poistetaan ID:llä kiekko
      * @param event ei käytössä
-     *
      */
     @FXML
     public void handlePoistaClick(ActionEvent event) throws IOException {
