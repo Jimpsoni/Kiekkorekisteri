@@ -237,19 +237,7 @@
                                         </VBox>
                                     </children>
                                 </VBox>
-                                <VBox prefHeight="469.0" prefWidth="217.0">
-                                    <children>
-                                        <Label text="Viimeisimmät heitot kiekolla">
-                                            <VBox.margin>
-                                                <Insets top="15.0" />
-                                            </VBox.margin>
-                                            <font>
-                                                <Font size="15.0" />
-                                            </font>
-                                        </Label>
-
-                                    </children>
-                                </VBox>
+                                <VBox prefHeight="469.0" prefWidth="217.0" />
                             </children>
                         </HBox>
                     </children>
