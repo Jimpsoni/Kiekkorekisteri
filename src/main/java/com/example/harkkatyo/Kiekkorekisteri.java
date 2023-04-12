@@ -4,9 +4,9 @@ import java.util.regex.Pattern;
 
 /**
  * TODO
- * Suodatus tarkastaKiekko();
- * järkeväksi
+ * Suodatus tarkastaKiekko(); järkeväksi
  *
+ * Muokkaa ja lisää ohjaimet hajoavat jos tekstikenttä jätetään tyhjäksi
  */
 
 
@@ -49,9 +49,9 @@ public class Kiekkorekisteri {
      * @param tiedot tiedot, jotka siihen päivitetään
      */
     public void muokkaaKiekkoa(Kiekko kiekko, String[] tiedot) {
-        kiekko.setPaino(tiedot[0]);
-        kiekko.setValmistusvuosi(tiedot[1]);
-        kiekko.setKunto(tiedot[2]);
+        kiekko.setPaino(Integer.parseInt(tiedot[0]));
+        kiekko.setValmistusvuosi(Integer.parseInt(tiedot[1]));
+        kiekko.setKunto(Integer.parseInt(tiedot[2]));
         kiekko.setTussit(tiedot[3]);
         kiekko.setErikoisera(tiedot[4]);
         kiekko.setMuovi(muovit.getByMuovi(tiedot[5]));
@@ -119,22 +119,21 @@ public class Kiekkorekisteri {
         String[] s = new String[11]; // Alustetaan palautettava taulukko
 
         // haetaan kaikki tarvittavat tiedot kiekosta
-        String[] kiekonTiedot = kiekko.getInformation();
         String kiekonMuovi = this.muovit.getByID(kiekko.getMuoviID());
         String[] kiekonValmistaja = this.valmistajaJaMalli.getByID(kiekko.getValmistajaID()).getInformation();
 
         // Asetetaan kiekon tiedot kokonaisvaltaiseen taulukkoon yksitellen
-        s[0] = kiekonTiedot[0];     // väri
-        s[1] = kiekonTiedot[1];     // Vuosimalli
-        s[2] = kiekonTiedot[2];     // paino
-        s[3] = kiekonValmistaja[2]; // Nopeus
-        s[4] = kiekonValmistaja[3]; // Liito
-        s[5] = kiekonValmistaja[4]; // Vakaus
-        s[6] = kiekonValmistaja[5]; // Feidi
-        s[7] = kiekonMuovi;         // muovi
-        s[8] = kiekonTiedot[3];     // kunto
-        s[9] = kiekonTiedot[4];     // tussit
-        s[10] = kiekonTiedot[5];    // erikoiserä
+        s[0] = kiekko.getVari();                               // väri
+        s[1] = String.valueOf(kiekko.getValmistusvuosi());     // Vuosimalli
+        s[2] = String.valueOf(kiekko.getPaino());              // paino
+        s[3] = kiekonValmistaja[2];                            // Nopeus
+        s[4] = kiekonValmistaja[3];                            // Liito
+        s[5] = kiekonValmistaja[4];                            // Vakaus
+        s[6] = kiekonValmistaja[5];                            // Feidi
+        s[7] = kiekonMuovi;                                    // muovi
+        s[8] = String.valueOf(kiekko.getKunto());              // kunto
+        s[9] = kiekko.getTussit();                             // tussit
+        s[10] = kiekko.getErikois();                           // erikoiserä
 
         return s;
     }
@@ -189,6 +188,14 @@ public class Kiekkorekisteri {
     public static boolean filter(String kohde, String regex) {
         Pattern haku = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
         return haku.matcher(kohde).find();
+    }
+
+    public void asetaNumeerisetSuodattimet(int[][] s) {
+        suodatin.asetaNumeerisetSuodattimet(s);
+    }
+
+    public void asetaValikkoSuodattimet(String[] s) {
+        suodatin.asetaValikkoSuodattimet(s);
     }
 
 
