@@ -96,64 +96,6 @@ public class PaaikkunaController {
     }
 
 
-//===========================================================================================================
-                                    // SUODATTAMINEN
-    /**
-     * @param event Ei käytössä
-     * @throws IOException
-     */
-    @FXML
-    public void handleSuodataClick(ActionEvent event) throws IOException {
-        Stage ikkuna = new Stage();
-
-        // Estetään pääsy pääikkunaan
-        ikkuna.initModality(Modality.APPLICATION_MODAL);
-        ikkuna.setTitle("Suodata tuloksia");
-        ikkuna.setMinWidth(250);
-
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("suodata.fxml"));
-        Scene scene = new Scene(loader.load());
-
-        loader.setRoot(this);
-
-        SuodataController suodatacontroller = loader.getController();
-        suodatacontroller.alusta();
-
-        ikkuna.setScene(scene);
-        ikkuna.showAndWait();
-
-        kiekkorekisteri.asetaNumeerisetSuodattimet(suodatacontroller.getNumericValues());
-        kiekkorekisteri.asetaValikkoSuodattimet(suodatacontroller.getStringValues());
-
-    }
-
-    //===========================================================================================================
-                                    // POISTAMINEN
-
-
-    /**
-     * Nostaa hälytyksen ja jos vielä painetaan että ollaan varmoja poistosta niin
-     *
-     * poistetaan ID:llä kiekko
-     * @param event ei käytössä
-     */
-    @FXML
-    public void handlePoistaClick(ActionEvent event) throws IOException {
-        int ID = valittu.getID();
-
-        // Kysytään käyttäjältä, haluaako varmasti poistaa
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setContentText("Haluatko varmasti poistaa kiekon ID:llä " + valittu.getID() + "?");
-        Optional<ButtonType> valinta = alert.showAndWait();
-
-        // Jos haluaa
-        if (valinta.get() == ButtonType.OK) {
-            kiekkorekisteri.poistaKiekko(ID);
-            refresh();
-        }
-    }
-
-
     /**
      * @param event ei käytössä
      * @throws IOException
@@ -278,6 +220,63 @@ public class PaaikkunaController {
         if (lisaaController.getTallennetaan()) {
             String[] tiedot = lisaaController.getData();
             kiekkorekisteri.lisaaUusiKiekko(tiedot);
+            refresh();
+        }
+    }
+
+
+    //===========================================================================================================
+                                // SUODATTAMINEN
+    /**
+     * @param event Ei käytössä
+     * @throws IOException
+     */
+    @FXML
+    public void handleSuodataClick(ActionEvent event) throws IOException {
+        Stage ikkuna = new Stage();
+
+        // Estetään pääsy pääikkunaan
+        ikkuna.initModality(Modality.APPLICATION_MODAL);
+        ikkuna.setTitle("Suodata tuloksia");
+        ikkuna.setMinWidth(250);
+
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("suodata.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        loader.setRoot(this);
+
+        SuodataController suodatacontroller = loader.getController();
+        suodatacontroller.alusta();
+
+        ikkuna.setScene(scene);
+        ikkuna.showAndWait();
+
+        kiekkorekisteri.asetaNumeerisetSuodattimet(suodatacontroller.getNumericValues());
+        kiekkorekisteri.asetaValikkoSuodattimet(suodatacontroller.getStringValues());
+
+    }
+
+
+    //===========================================================================================================
+                                // POISTAMINEN
+    /**
+     * Nostaa hälytyksen ja jos vielä painetaan että ollaan varmoja poistosta niin
+     *
+     * poistetaan ID:llä kiekko
+     * @param event ei käytössä
+     */
+    @FXML
+    public void handlePoistaClick(ActionEvent event) throws IOException {
+        int ID = valittu.getID();
+
+        // Kysytään käyttäjältä, haluaako varmasti poistaa
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setContentText("Haluatko varmasti poistaa kiekon ID:llä " + valittu.getID() + "?");
+        Optional<ButtonType> valinta = alert.showAndWait();
+
+        // Jos haluaa
+        if (valinta.get() == ButtonType.OK) {
+            kiekkorekisteri.poistaKiekko(ID);
             refresh();
         }
     }
