@@ -140,7 +140,7 @@ public class PaaikkunaController {
      * @param event ei käytössä
      */
     @FXML
-    public void hakeminen(KeyEvent event) {
+    public void hakeminen() {
         // Muotoillaan regex merkkijono
         String haku = "^" + hakukentta.getText() +  "[a-z]*";
         Kiekko[] tulokset = kiekkorekisteri.suodata(haku);
@@ -253,6 +253,7 @@ public class PaaikkunaController {
 
         kiekkorekisteri.asetaNumeerisetSuodattimet(suodatacontroller.getNumericValues());
         kiekkorekisteri.asetaValikkoSuodattimet(suodatacontroller.getStringValues());
+        hakeminen();
 
     }
 

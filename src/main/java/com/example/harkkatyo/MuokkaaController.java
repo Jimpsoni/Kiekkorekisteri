@@ -20,8 +20,6 @@ public class MuokkaaController {
     @FXML
     private RadioButton jalkiaEi, jalkiaOn, erikoisEi, erikoisOn;
 
-    private Kiekko kiekko;
-
     private boolean tallennetaan;
 
 
@@ -31,7 +29,6 @@ public class MuokkaaController {
      * @param kiekkorekisteri Voidaan hakea muovit yms...
      */
     public void alusta(Kiekko kiekko, Kiekkorekisteri kiekkorekisteri) {
-        this.kiekko = kiekko;
 
         Kunto.setText(String.valueOf(kiekko.getKunto()));
         Paino.setText(String.valueOf(kiekko.getPaino()));

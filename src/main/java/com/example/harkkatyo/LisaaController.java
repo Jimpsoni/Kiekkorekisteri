@@ -16,7 +16,7 @@ public class LisaaController {
      * Hoitaa "lisää" näytön ohjaamisen
      */
     public void alusta(Kiekkorekisteri kiekkorekisteri) {
-        muovit = kiekkorekisteri.getMuovit();
+        String[] muovit = kiekkorekisteri.getMuovit();
         uusiVari.getItems().addAll(varit);
         uusiMuovi.getItems().addAll(muovit);
     }
@@ -35,7 +35,6 @@ public class LisaaController {
 
     @FXML
     private ChoiceBox<String> uusiMuovi, uusiVari;
-    private String[] muovit;
     private final String[] varit = {"Punainen", "keltainen", "Sininen", "Valkoinen"};
     private boolean tallennetaan;
 
