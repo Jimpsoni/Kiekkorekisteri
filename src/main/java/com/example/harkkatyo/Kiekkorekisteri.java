@@ -168,15 +168,39 @@ public class Kiekkorekisteri {
 
         // Käydään läpi kaikki kiekot
         for (Kiekko kiekko: kiekot) {
+            String muovi = getMuoviByID(kiekko.getMuoviID());
+            int[] lentoarvot = getFlightNumbers(kiekko.getValmistajaID());
+
             if (   (filter(kiekko.getMalli(), regex) ||
                     filter(kiekko.getValmistaja(), regex)) &&
-                    suodatin.tarkastaKiekko(kiekko)) {
+                    suodatin.tarkastaKiekko(kiekko) &&
+                    suodatin.tarkastaValmistajaJaMalli(lentoarvot) &&
+                    suodatin.tarkastaMuovi(muovi))
+            {
 
                 k[indeksi] = kiekko;
                 indeksi++;
             }
         }
         return k;
+    }
+
+
+    /**
+     * Hakee kiekon lentoarvot
+     *
+     * @param ID ValmistajaJaMalli ID, jolla tiedot haetaan
+     * @return listan lentoarvoista
+     */
+    public int[] getFlightNumbers(int ID) {
+        String[] tiedot = valmistajaJaMalli.getByID(ID).getInformation();
+
+        return new int[] {
+                Integer.parseInt(tiedot[2]),
+                Integer.parseInt(tiedot[3]),
+                Integer.parseInt(tiedot[4]),
+                Integer.parseInt(tiedot[5])
+        };
     }
 
 
