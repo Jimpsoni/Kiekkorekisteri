@@ -12,9 +12,28 @@ import java.util.regex.Pattern;
 
 public class Kiekkorekisteri {
     private final Suodatin suodatin = new Suodatin();
-    private final Muovit muovit = new Muovit();
-    private final Kiekot kiekotLuokka = new Kiekot();
-    private final ValmistajaJaMallit valmistajaJaMalli = new ValmistajaJaMallit();
+    private Muovit muovit = new Muovit();
+    private Kiekot kiekotLuokka = new Kiekot();
+    private ValmistajaJaMallit valmistajaJaMalli = new ValmistajaJaMallit();
+
+
+    /**
+     * Oletus alustaja
+     */
+    public Kiekkorekisteri() {}
+
+
+    /**
+     * Alustetaan kiekkorekisteri testausta varten
+     * @param pathkiekot polku tiedostoon, jota halutaan lukea
+     * @param pathValmistaja polku tiedostoon, jota halutaan lukea
+     * @param pathMuovi polku tiedostoon, jota halutaan lukea
+     */
+    public Kiekkorekisteri(String pathkiekot, String pathValmistaja, String pathMuovi) {
+        kiekotLuokka = new Kiekot(pathkiekot);
+        valmistajaJaMalli = new ValmistajaJaMallit(pathValmistaja);
+        muovit = new Muovit(pathMuovi);
+    }
 
 
     /**
