@@ -2,7 +2,6 @@ package com.example.harkkatyo;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -60,7 +59,6 @@ public class ValmistajaJaMallit {
         }
 
         return lisaaUusi(tiedot);
-
     }
 
 
