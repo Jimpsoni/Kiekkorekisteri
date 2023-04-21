@@ -73,7 +73,7 @@ public class Kiekot {
     /**
      * Tyhjentää taulukon
      */
-    public void clearTaulukko() {
+    public void clearArray() {
         taulukko = new Kiekko[MAXLKM];
     }
 
@@ -85,7 +85,7 @@ public class Kiekot {
      */
     public void deleteByID(int ID) {
         Kiekko[] t = getKiekot();
-        clearTaulukko();
+        clearArray();
         for (int i = 0; i < t.length; i++) {
             if (t[i].getID() == ID) continue;
             if (i > ID) { t[i].setID(t[i].getID() - 1); }
@@ -116,12 +116,13 @@ public class Kiekot {
      * Kirjoitetaan taulukko kiekot.dat tiedostoon
      */
     public void kirjoitaTaulukkoTiedostoon() {
+        // Tyhjennetään ensin vanhat tiedot tiedostosta
         try (FileWriter w = new FileWriter(path, false)) {
         } catch (IOException ex) {
             System.out.println("Ei löytynyt: " + ex);
         }
 
-
+        // Ja kirjoitetaan sitten uudet
         try (PrintStream fo = new PrintStream(new FileOutputStream(path, true))) {
             fo.print("ID|kiekko|väri|vuosi|paino|muovi|kunto|tussit|erikoisera\n");
             for (Kiekko kiekko: getKiekot()) {
@@ -132,7 +133,7 @@ public class Kiekot {
         }
     }
 
-        /**
+    /**
      * Pääohjelma testausta varten
      * @param args ei käytössä
      */
