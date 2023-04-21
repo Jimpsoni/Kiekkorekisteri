@@ -32,4 +32,10 @@ public class TestKiekkorekisteri {
     }
 
 
+    @Test
+    public void testGetKiekot() {
+        Assertions.assertEquals(2, kr.getKiekot().length);
+    }
+
+
 }
