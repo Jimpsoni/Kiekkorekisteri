@@ -17,10 +17,18 @@ public class TestKiekkorekisteri {
     }
 
     @Test
-    public void testSuodata() {
-        Assertions.assertEquals(1, kr.suodata("^disc*").length);
-        Assertions.assertEquals(1, kr.suodata("^inn*").length);
-        Assertions.assertEquals(2, kr.suodata("^*").length);
+    public void testgetFlightNumbers() {
+        Assertions.assertArrayEquals(new int[] {11, 5, -2, 2}, kr.getFlightNumbers(1));
+        Assertions.assertArrayEquals(new int[] {12, 5, -1, 3}, kr.getFlightNumbers(2));
+    }
+
+    @Test
+    public void testFilter() {
+        Assertions.assertTrue(Kiekkorekisteri.filter("Discmania", "^disc"));
+        Assertions.assertTrue(Kiekkorekisteri.filter("Discmania", "^"));
+        Assertions.assertTrue(Kiekkorekisteri.filter("Logic", "^l"));
+        Assertions.assertFalse(Kiekkorekisteri.filter("Logic", "^ogic"));
+        Assertions.assertFalse(Kiekkorekisteri.filter("Logic", "^o"));
     }
 
 
