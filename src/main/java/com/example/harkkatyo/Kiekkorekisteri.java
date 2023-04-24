@@ -4,9 +4,10 @@ import java.util.regex.Pattern;
 
 /**
  * TODO
- * Suodatus tarkastaKiekko(); järkeväksi
+ * Suodatus tarkastaKiekko(); loppuun, ei pysty suodattaa muovilla tai värillä
+ * eikä myöskään boolean arvoilla
  *
- * Muokkaa ja lisää ohjaimet hajoavat jos tekstikenttä jätetään tyhjäksi
+ *
  */
 
 
